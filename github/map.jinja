@@ -1,0 +1,14 @@
+{% set github = salt['grains.filter_by']({
+  'default': {
+    'repository': 'set_repo',
+    'gh_user': 'git_user',
+    'user': 'github',
+    'user_password': '$6$v9yMYVxg$qpkMPR6akDKmgdLoVPFwVyCeem1CvoAn2vPVBemsq7Ug8QZ9hD8zA9BlUU4J8OBCg/7gFmO8hKHaU.ybuxGyM.',
+    'target': '/home/github',
+    'fingerprint': 'set-via-pillar',
+    'sshpriv': 'set-via-pillar',
+    'sshpub': 'set-via-pillar',
+  },
+}, merge=salt['pillar.get']('github:lookup')) %}
+
+
